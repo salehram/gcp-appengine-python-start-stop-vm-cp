@@ -13,7 +13,7 @@ def main():
 
 @app.route('/start-vm')
 def startVM():
-    url = 'https://europe-west1-gcp-workspace-248907.cloudfunctions.net/start-mc-srv'
+    url = 'https://us-central1-cf-start-and-stop-vms.cloudfunctions.net/vm-start'
 
     creds = service_account.IDTokenCredentials.from_service_account_file(
            credentials_file, target_audience=url)
@@ -26,7 +26,7 @@ def startVM():
 
 @app.route('/stop-vm')
 def stopVM():
-    url = 'https://europe-west1-gcp-workspace-248907.cloudfunctions.net/stop-mc-srv'
+    url = 'https://us-central1-cf-start-and-stop-vms.cloudfunctions.net/stop-vm'
 
     creds = service_account.IDTokenCredentials.from_service_account_file(
            credentials_file, target_audience=url)
